@@ -5,40 +5,47 @@ import Link from "next/link";
 
 const BoxRevealDemo = () => {
   return (
-    <div className="h-full w-full items-center justify-center ml-10 overflow-hidden pt-8 space-y-2">
-      <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
-        
-        <p className="text-3xl font-semibold">1. Connect</p>
+    <div className="flex flex-col ml-10 overflow-hidden pt-8 space-y-4 h-full w-full">
+      {/* Paso 1 */}
+      <BoxReveal boxColor="#3b82f6" duration={0.5}>
+        <p className="text-2xl md:text-3xl font-semibold text-neutral-800 dark:text-neutral-100">
+          1. Conéctate
+        </p>
       </BoxReveal>
-
-      <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
-        <h2 className="my-2 text-lg text-gray-500">
-          Connect with us via
-          <Link href={"/meeting"} className="text-[#3b82f6]">
-            {" "}
-            meeting{" "}
+      <BoxReveal boxColor="#3b82f6" duration={0.5}>
+        <p className="text-md md:text-lg text-gray-600 dark:text-gray-400">
+          Programa una reunión.{" "}
+          <Link href="/contacto" className="text-[#3b82f6] hover:underline">
+            Clic aquí
           </Link>
-        </h2>
-      </BoxReveal>
-      <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
-        <p className="text-3xl font-semibold">2. Collaborate</p>
+        </p>
       </BoxReveal>
 
-      <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
-        <h2 className="my-2 text-lg text-gray-500">
-          Outline the scope of the project
-        </h2>
+      {/* Paso 2 */}
+      <BoxReveal boxColor="#3b82f6" duration={0.5}>
+        <p className="text-2xl md:text-3xl font-semibold text-neutral-800 dark:text-neutral-100">
+          2. Colabora
+        </p>
+      </BoxReveal>
+      <BoxReveal boxColor="#3b82f6" duration={0.5}>
+        <p className="text-md md:text-lg text-gray-600 dark:text-gray-400">
+          Comparte tus requerimientos.
+        </p>
       </BoxReveal>
 
-      <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
-        <p className="text-3xl font-semibold">3. Create</p>
+      {/* Paso 3 */}
+      <BoxReveal boxColor="#3b82f6" duration={0.5}>
+        <p className="text-2xl md:text-3xl font-semibold text-neutral-800 dark:text-neutral-100">
+          3. Creamos
+        </p>
       </BoxReveal>
-
-      <BoxReveal boxColor={"#3b82f6"} duration={0.5}>
-        <h2 className="my-2 text-lg text-gray-500">Leave the rest to us</h2>
+      <BoxReveal boxColor="#3b82f6" duration={0.5}>
+        <p className="text-md md:text-lg text-gray-600 dark:text-gray-400">
+          Desarrollamos tu solución.
+        </p>
       </BoxReveal>
     </div>
   );
-}
+};
 
 export default BoxRevealDemo;

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { motion, Variants, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -30,7 +30,7 @@ export default function WordPullUp({
   },
   className,
 }: WordPullUpProps) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
   return (
@@ -40,7 +40,9 @@ export default function WordPullUp({
       initial="hidden"
       animate={isInView ? "show" : "hidden"}
       className={cn(
-        "font-display text-center text-3xl font-bold leading-[5rem] tracking-[-0.02em] drop-shadow-sm",
+        // Updated styling for a more subtle, professional look
+        "font-sans text-center text-2xl font-semibold leading-snug tracking-normal",
+        "text-gray-800 dark:text-gray-100",
         className
       )}
     >
@@ -48,9 +50,9 @@ export default function WordPullUp({
         <motion.span
           key={i}
           variants={framerProps}
-          style={{ display: "inline-block", paddingRight: "8px" }}
+          style={{ display: "inline-block", paddingRight: "6px" }}
         >
-          {word === "" ? <span>&nbsp;</span> : word}
+          {word === "" ? "\u00A0" : word}
         </motion.span>
       ))}
     </motion.div>
